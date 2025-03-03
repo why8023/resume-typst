@@ -4,7 +4,7 @@
 // to customize this template and discover how it works.
 #show: project.with(
   title: "Resume-ng",
-  author: (name: "冯开宇"),
+  author: (name: "你好"),
   contacts: 
     (
       "+86 188-888-8888",
