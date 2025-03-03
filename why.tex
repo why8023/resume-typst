@@ -1,0 +1,118 @@
+% !TeX TS-program = xelatex
+
+\documentclass{resume}
+\usepackage{fontspec}
+% \setmainfont{Times New Roman}  % or another font you have installed
+% \setCJKmainfont{SimSun} %
+
+\ResumeName{王弘扬}
+
+% 如果想插入照片，请使用以下两个库。
+\usepackage{graphicx}
+\usepackage{tikz}
+
+\begin{document}
+
+\ResumeContacts{
+    183 2850 4432,
+    291424708@qq.com,
+    26岁,
+    硕士,
+    CET-6,
+    % 中共党员,
+    % \ResumeUrl{https://blog.fkynjyq.com}{blog.fkynjyq.com} \footnote{下划线内容包含超链接。},%
+    % \ResumeUrl{https://github.com/fky2015}{github.com/fky2015}%
+}
+
+% 如果想插入照片，请取消此代码的注释。
+% 但是默认不推荐插入照片，因为这不是简历的重点。
+% 如果默认的照片插入格式不能满足你的需求，你可以尝试调整照片的大小，或者使用其他的插入照片的方法。
+% 不然，也可以先渲染 PDF 简历，然后用其他工具在 PDF 上叠加照片。
+\begin{tikzpicture}[remember picture, overlay]
+    \node [anchor=north east, inner sep=0, xshift=-0.8cm, yshift=-0.3cm]  at (current page.north east)
+    {\includegraphics[width=1.6cm]{why.jpg}};
+\end{tikzpicture}
+
+\ResumeTitle
+
+\section{教育经历}
+\ResumeItem[成都理工大学|硕士研究生]{成都理工大学}[\textnormal{地球探测与信息技术|}学术型硕士研究生][2016.09-2019.06]
+\begin{itemize}
+    \item \textbf{Oral Presentation}《Igneous reservoirs characterization by the new high resolution seismic coherency attributes》\protect\footnote{\textbf{境外国际会议}}
+    \item \textbf{专利}《一种地震信号相干性高精度检测方法》(CN107918153A)
+    \item \textbf{全国}大学生勘探地球物理大赛\textbf{一等奖}, 多次国家学业奖学金, 多篇期刊文章, 课程平均成绩专业第一
+\end{itemize}
+\ResumeItem[成都理工大学|本科生]{成都理工大学}[\textnormal{勘查技术与工程(卓越工程师计划)|} 工学学士][2012.09-2016.06]
+\begin{itemize}
+    \item 国家励志奖学金, 多次校级奖项, 专业核心课程绩点3.7/4.0
+\end{itemize}
+
+\section{技术能力}
+\begin{itemize}
+    \item \textbf{语言}: \textbf{Python}, C++, Matlab, SQL, Shell
+    \item \textbf{工具}: 熟悉PyTorch, TensorFlow, scikit-learn, PyCaret 等常用机器/深度学习框架, \textbf{有实践经验}: LangChain, Pandas, Numpy, Hugging Face, Docker, FastAPI, Gradio, Streamlit, OpenCV, Git等
+    \item \textbf{模型}: 熟悉SVM, 决策树, 聚类, 异常检测, 朴素贝叶斯, XGBooost等机器学习算法, 熟悉CNN, RNN, ResNet, U-Net, Transformer等深度学习模型结构
+\end{itemize}
+
+\section{工作经历}
+\ResumeItem{成都心吉康科技有限公司}[算法工程师][2023.10至今]
+\begin{itemize}
+    \item \textbf{核心项目}: ST段异常检测算法, Holter报告分析系统, 心电信号质量评估模块
+    \item \textbf{技术成果}: 
+        优化ST检测算法准确率提升8\%, 
+        改进多导联ST分析流程降低40\%计算资源, 
+        开发Holter报告分析系统提升医生诊断效率300\%
+    \item \textbf{工程贡献}: 
+        设计模块化ST检测流程支持增量计算,
+        实现多线程并行优化提升处理效率50\%,
+        搭建算法自动化测试和评估平台
+\end{itemize}
+\ResumeItem{成都乐动信息技术有限公司}[算法工程师][2020.07-2023.10]
+\begin{itemize}
+    \item \textbf{独立负责}:基于深度学习的运动过程识别模型, 基于ML的GPS轨迹优化算法, 基于Stable Diffusion的奖牌生成模型
+    \item \textbf{参与}: 移动端和大屏基于人体骨骼点的动作姿态识别功能, 基于LangChain和OpenAI的智能客服系统
+    \item \textbf{专利}《一种高精度GPS轨迹停留点检测算法》; \textbf{软著}《FITMORE 3D动作录制评分系统》
+\end{itemize}
+\ResumeItem{成都酷乐无限科技有限公司}[算法工程师][2019.07-2020.06]
+\begin{itemize}
+    \item \textbf{负责}: 游戏作弊行为检测模型, 相似账号识别算法, 游戏等级评定算法, 游戏数据的时间序列预测模型
+\end{itemize}
+
+\section{项目经历}
+\ProjectItem{基于深度学习的运动过程精细划分模型}[分类算法~防作弊服务~异常检测][2020.07-2022.09]
+\begin{itemize}
+    \item 搭建Label Studio收集和标注移动设备的三轴传感器数据, 建立运动数据集
+    \item 使用PyCaret训练, 对比, 优化机器学习模型, 最后选定XGBooost模型, 准确率达到89\%
+    \item 使用Pytorch以DeepConvLSTM为baseline 进行训练和优化, 进一步提高准确率至99\%
+    \item 结合ONNX Runtime, FastAPI, Uvicorn提供服务, 编写Dockerfile进行部署
+\end{itemize}
+\ProjectItem{基于人体骨骼点的动作姿态识别算法}[MoveNet~移动端~动作匹配][2022.03-2023.03]
+\begin{itemize}
+    \item 部署MoveNet模型到移动端, 测试骨骼点识别的效果, 准确率达到 90\%
+    \item 基于商汤SDK提供的骨骼点数据, 独创动作匹配算法, 评估动作标准度
+    \item Android端使用Pytorch通过自定义编译所需算子后部署, iOS端使用TensorFlow Lite部署
+\end{itemize}
+\ProjectItem{基于LangChain和OpenAI的客服问答系统}[文档问答~ChatGPT][2023.06-2023.08]
+\begin{itemize}
+    \item 基于LangChain和Vector Database实现对客服文档资料的读取, 分割, 向量化存储, 相似性检索
+    \item 使用OpenAI的GPT模型, 优化PromptTemplate, 实现符合标准的回答流程
+    \item 向开源项目LangChain提交了PR修复Metadata Filter的问题,并被采纳
+\end{itemize}
+\ProjectItem{游戏作弊检测模型}[异常检测~特征挖掘][2019.06-2020.06]
+\begin{itemize}
+    \item 基于常用统计特征能够有效识别作弊行为, 使用Isolation Forest进行异常检测, 准确率达到 80\%
+    \item 为解决新的作弊方式，探索游戏策略层次的敏感特征，准确率提高到 95\%
+    \item 使用Pandas进行特征提取和分析, 利用scikit-learn进行异常检测, 通过Flask提供检测服务
+\end{itemize}
+\ProjectItem{基于NearestNeighbor的GPS轨迹优化算法}[KNN~KalmanFiltering~停留点检测~][2021.03-2021.07]
+\begin{itemize}
+    \item 针对通用运动场景, 独创高精度GPS轨迹停留点检测算法,解决密集停留点对轨迹的影响
+    \item 针对跑圈场景,通过异常检测处理轨迹突变点,采用卡尔曼滤波修正轨迹飘移点,基于NearestNeighbor算法和高质量的历史数据对偏移轨迹纠偏, 提高轨迹合理性
+\end{itemize}
+\ProjectItem{基于Stable Diffusion的奖牌生成模型}[模型微调][2023.01-2023.02]
+\begin{itemize}
+    \item 基于Stable Diffusion模型对自定义的奖牌数据集进行Fine-tuning, 并在测试集上取得了较好的效果
+    \item 使用Gradio搭建webUI, 提供奖牌生成服务
+\end{itemize}
+
+\end{document}
